@@ -1,0 +1,90 @@
+<span class="nui-h2">
+  {{itemType | uppercase}}
+</span>
+<button nui-button type="button" icon="add" (click)="onAddClick()">Add</button>
+<div class="nui-table">
+  <div class="nui-table__container" id="nui-demo-basic-table">
+    <table nui-table [dataSource]="getItemsOfType()">
+      <ng-container nuiColumnDef="name">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Name</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-combobox-v2 placeholder="Select Item" #itemNameCombo [isRemoveValueEnabled]="false" (valueSelected)="onCatalogItemNameChange(element)">
+            <nui-select-v2-option *ngFor="let itemName of allItemNames" [value]="itemName" [ngValue]="allItemNames[0]">{{itemName}}</nui-select-v2-option>
+          </nui-combobox-v2>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="catalogStage">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Catalog Stage</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-combobox-v2 [displayWith]="displayCatalogStage"
+                           [isRemoveValueEnabled]="false"
+                           #catalogStageCombo
+                           (valueSelected)="onCatalogStageChange(element)"
+                           [value]="catalogStages[0]">
+            <nui-select-v2-option *ngFor="let catalogStage of catalogStages" [value]="catalogStage">
+              <span class="mr-3" [nuiComboboxV2OptionHighlight]="catalogStage.name"></span>
+            </nui-select-v2-option>
+          </nui-combobox-v2>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="productStage">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Product Stage</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-combobox-v2 [displayWith]="displayProductStage"
+                           [isRemoveValueEnabled]="false"
+                           #productStageCombo
+                           (valueSelected)="onProductStageChange(element)"
+                           [value]="productStages[0]">
+            <nui-select-v2-option *ngFor="let productStage of productStages" [value]="productStage">
+              <span class="mr-3" [nuiComboboxV2OptionHighlight]="productStage.name"></span>
+            </nui-select-v2-option>
+          </nui-combobox-v2>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="versionNumbers">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Version Number</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-combobox-v2 placeholder="Select Item" #versionNumberCombo [isRemoveValueEnabled]="false" (valueSelected)="onVersionNumberChange(element)">
+            <nui-select-v2-option *ngFor="let itemName of element.versionNumbers" [value]="itemName">{{itemName}}</nui-select-v2-option>
+          </nui-combobox-v2>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="buildNumbers">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Build Number</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-combobox-v2 placeholder="Select Item" #buildNumberCombo [isRemoveValueEnabled]="false" (valueSelected)="onBuildNumberChange(element)">
+            <nui-select-v2-option *ngFor="let itemName of element.buildNumbers" [value]="itemName">{{itemName}}</nui-select-v2-option>
+          </nui-combobox-v2>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="note">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Note</th>
+        <td nui-cell *nuiCellDef="let element">
+          {{element.note}}
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="updateOnly">
+        <th nui-header-cell *nuiHeaderCellDef i18n> Update Only</th>
+        <td nui-cell *nuiCellDef="let element">
+          <nui-checkbox id="nui-demo-checkbox-basic" #updateCheckbox [checked]="false" (valueChange)="onUpdateChanged(element)"></nui-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container nuiColumnDef="deleteButton">
+        <th nui-header-cell *nuiHeaderCellDef i18n></th>
+        <td nui-cell *nuiCellDef="let element">
+          <button nui-button type="button" icon="delete" (click)="onDeleteClick(element)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr nui-header-row *nuiHeaderRowDef="displayedColumns;"></tr>
+      <tr nui-row *nuiRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

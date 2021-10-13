@@ -1,0 +1,14 @@
+# Orion website
+Src\Web\*
+Recommendations\Src\Web\*
+!Src\Web\App_GlobalResources\VIMWebContent.resx
+!Src\Web\App_GlobalResources\RecommendationsWebContent.resx
+!Src\Web\Orion\VIM\*
+!Recommendations\Src\Web\Orion\RecommendationsWeb\*
+
+# Visual Studio junk
+Debug
+Release
+*.filters
+*.user
+*.suo

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FalconCommandlineGenerator_WPF", "FalconCommandlineGenerator_WPF\FalconCommandlineGenerator_WPF.csproj", "{224FC542-41F5-4E6D-AC75-0E0877AB5E00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FalconCommandlineGenerator_website", "FalconCommandlineGenerator_website\FalconCommandlineGenerator_website.csproj", "{3CA2E642-EB62-49B6-9F0A-BF78C5757B87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{224FC542-41F5-4E6D-AC75-0E0877AB5E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224FC542-41F5-4E6D-AC75-0E0877AB5E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224FC542-41F5-4E6D-AC75-0E0877AB5E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224FC542-41F5-4E6D-AC75-0E0877AB5E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA2E642-EB62-49B6-9F0A-BF78C5757B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA2E642-EB62-49B6-9F0A-BF78C5757B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA2E642-EB62-49B6-9F0A-BF78C5757B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA2E642-EB62-49B6-9F0A-BF78C5757B87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4854268B-BB9F-4C9B-B096-168884067686}
+	EndGlobalSection
+EndGlobal

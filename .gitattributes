@@ -1,0 +1,20 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf merge=union 
+*.cs text eol=crlf diff=csharp
+*.csproj text eol=crlf merge=union 
+*.ts text eol=crlf
+*.aspx text eol=crlf
+*.ascx text eol=crlf
+*.js text eol=crlf
+*.css text eol=crlf
+*.less text eol=crlf
+*.dependencies text eol=crlf
+*.ps1 text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.gif binary

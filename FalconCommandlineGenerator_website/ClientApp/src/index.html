@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="nui" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FalconCommandlineGenerator_website</title>
+  <base href="/">
+
+  <meta name=content ="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="nui">
+  <div class="nui-content">
+    <app-root>Loading...</app-root>
+    <script type="text/javascript">
+      function copyToClipboard() {
+        var copyDiv = document
+          .evaluate(".//nui-textbox//input[@type='text']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
+          .singleNodeValue;
+        copyDiv.select();
+        document.execCommand("Copy", false, null);
+      }
+    </script>
+  </div>
+</body>
+</html>

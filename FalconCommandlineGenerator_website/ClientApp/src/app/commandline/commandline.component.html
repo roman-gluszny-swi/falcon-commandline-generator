@@ -1,0 +1,46 @@
+<div>
+  <div>
+    <nui-checkbox id="nui-demo-checkbox" [checked]="false" [(ngModel)]="commandlineGenerator.autoUpdate" (change)="regenerateCommandline()">
+      Autoupdate
+    </nui-checkbox>
+    <nui-checkbox id="nui-demo-checkbox" [checked]="false" [(ngModel)]="commandlineGenerator.noTests" (change)="regenerateCommandline()">
+      No Tests
+    </nui-checkbox>
+    <label>
+      Catalog Stage:
+      <nui-combobox-v2 [displayWith]="displayFalconCatalogStage"
+                       [isRemoveValueEnabled]="false"
+                       #falconCatalogStageCombo
+                       (valueSelected)="onFalconCatalogStageChange()"
+                       [value]="falconCatalogStages[0]">
+        <nui-select-v2-option *ngFor="let falconCatalogStage of falconCatalogStages" [value]="falconCatalogStage">
+          <span class="mr-3" [nuiComboboxV2OptionHighlight]="falconCatalogStage.name"></span>
+        </nui-select-v2-option>
+      </nui-combobox-v2>
+    </label>
+    <!--<nui-checkbox id="nui-demo-checkbox" [checked]="false" [(ngModel)]="commandlineGenerator.silent">
+      Silent
+    </nui-checkbox>-->
+    <!--Due to security resins it is not possible to run downloaded installer in client side. For this reason, Installer selectBox and Run button are useless. However, I will keep them commented for future possible workaround-->
+    <!--<label>
+      Installer Build:
+      <nui-combobox-v2 [displayWith]="displayInstallerCatalogStage"
+                       [isRemoveValueEnabled]="false"
+                       #installerCatalogStageCombo
+                       (valueSelected)="onInstallerCatalogStageChange()"
+                       [value]="falconCatalogStages[0]">
+        <nui-select-v2-option *ngFor="let falconCatalogStage of falconCatalogStages" [value]="falconCatalogStage">
+          <span class="mr-3" [nuiComboboxV2OptionHighlight]="falconCatalogStage.name"></span>
+        </nui-select-v2-option>
+      </nui-combobox-v2>
+    </label>-->
+  </div>
+  <div>
+    <nui-textbox id="demo-options-textbox-item"
+                 value="{{commandlineGenerator.commandline}}"
+                 [(ngModel)]="commandlineGenerator.commandline">
+    </nui-textbox>
+    <!--<button nui-button type="button" (click)="onRunInstallClick()">Run Installer</button>-->
+    <button nui-button type="button" onclick="copyToClipboard()" displayStyle="primary">Copy</button>
+  </div>
+</div>
